@@ -1,10 +1,14 @@
 import React from 'react'
 
+import Title from './Title'
+import Description from './Description'
+
 class App extends React.Component {
   render () {
     return (
       <div>
-        <h1>Hi there, this is a React boilerplate project</h1>
+        <Title />
+        <Description />
       </div>
     )
   }
