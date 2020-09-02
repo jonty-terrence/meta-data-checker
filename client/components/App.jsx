@@ -2,6 +2,7 @@ import React from 'react'
 
 import Title from './Title'
 import Description from './Description'
+import Preview from './Preview'
 
 class App extends React.Component {
   render () {
@@ -9,6 +10,7 @@ class App extends React.Component {
       <div>
         <Title />
         <Description />
+        <Preview />
       </div>
     )
   }

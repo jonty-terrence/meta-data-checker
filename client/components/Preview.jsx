@@ -1,13 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-class App extends React.Component {
+class Preview extends React.Component {
   render () {
     return (
       <div>
-        <h1>Hi there, this is a React boilerplate project</h1>
+        <h3>{this.props.title}</h3>
       </div>
     )
   }
 }
 
-export default App
+const mapStateToProps = state => {
+    return {
+      title: state.title
+    }
+  }
+
+export default connect(mapStateToProps)(Preview)
