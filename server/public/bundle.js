@@ -90,18 +90,27 @@
 /*!*********************************!*\
   !*** ./client/actions/index.js ***!
   \*********************************/
-/*! exports provided: COLLECT_TITLE, collectTitle */
+/*! exports provided: COLLECT_TITLE, COLLECT_DESCRIPTION, collectTitle, collectDescription */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLLECT_TITLE", function() { return COLLECT_TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLLECT_DESCRIPTION", function() { return COLLECT_DESCRIPTION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collectTitle", function() { return collectTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collectDescription", function() { return collectDescription; });
 var COLLECT_TITLE = 'COLLECT_TITLE';
+var COLLECT_DESCRIPTION = 'COLLECT_DESCRIPTION';
 var collectTitle = function collectTitle(title) {
   return {
     type: 'COLLECT_TITLE',
     title: title
+  };
+};
+var collectDescription = function collectDescription(description) {
+  return {
+    type: 'COLLECT_DESCRIPTION',
+    description: description
   };
 };
 
@@ -192,6 +201,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../actions */ "./client/actions/index.js");
 
 
 
@@ -203,6 +214,12 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 
+
+
+
+function handleChange(e, dispatch) {
+  dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_7__["collectDescription"])(e.target.value));
+}
 
 var Description = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(Description, _React$Component);
@@ -218,8 +235,16 @@ var Description = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Description, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("input", {
-        className: "description-input"
+        type: "text",
+        id: "description",
+        className: "description-input",
+        placeholder: "Start writing your description here",
+        onChange: function onChange(e) {
+          return handleChange(e, _this.props.dispatch);
+        }
       }));
     }
   }]);
@@ -227,7 +252,13 @@ var Description = /*#__PURE__*/function (_React$Component) {
   return Description;
 }(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Description);
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    description: state.description
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["connect"])(mapStateToProps)(Description));
 
 /***/ }),
 
@@ -280,7 +311,7 @@ var Preview = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Preview, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", null, this.props.title));
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", null, this.props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, this.props.description));
     }
   }]);
 
@@ -289,7 +320,8 @@ var Preview = /*#__PURE__*/function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    title: state.title
+    title: state.title,
+    description: state.description
   };
 };
 
@@ -412,6 +444,33 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 
 /***/ }),
 
+/***/ "./client/reducers/description.js":
+/*!****************************************!*\
+  !*** ./client/reducers/description.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return collectDescription; });
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions */ "./client/actions/index.js");
+
+function collectDescription() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions__WEBPACK_IMPORTED_MODULE_0__["COLLECT_DESCRIPTION"]:
+      return action.description;
+
+    default:
+      return state;
+  }
+}
+
+/***/ }),
+
 /***/ "./client/reducers/index.js":
 /*!**********************************!*\
   !*** ./client/reducers/index.js ***!
@@ -423,10 +482,13 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _title__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./title */ "./client/reducers/title.js");
+/* harmony import */ var _description__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./description */ "./client/reducers/description.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  title: _title__WEBPACK_IMPORTED_MODULE_1__["default"]
+  title: _title__WEBPACK_IMPORTED_MODULE_1__["default"],
+  description: _description__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
 
 /***/ }),
