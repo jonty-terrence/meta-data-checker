@@ -3,19 +3,19 @@ import { connect } from 'react-redux'
 import { collectTitle } from '../actions'
 
 function handleChange (e, dispatch) {
-    dispatch(collectTitle(e.target.value))
-  }
+  dispatch(collectTitle(e.target.value))
+}
 
 class Title extends React.Component {
   render () {
     return (
       <div>
-        <input 
-        type="text"
-        id="title"
-        className="title-input"
-        placeholder="Meta Data Checker | Write Your Title Here"
-        onChange={e => handleChange(e, this.props.dispatch)}
+        <input
+          type="text"
+          id="title"
+          className="title-input"
+          placeholder="Meta Data Checker | Write Your Title Here"
+          onChange={e => handleChange(e, this.props.dispatch)}
         >
         </input>
       </div>
@@ -24,9 +24,9 @@ class Title extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return {
-      title: state.title
-    }
+  return {
+    title: state.title
   }
+}
 
 export default connect(mapStateToProps)(Title)

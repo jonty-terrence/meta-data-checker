@@ -1,11 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+let characterCount = ''
+
 class TitleCharCount extends React.Component {
   render () {
+      if (this.props.title) {
+          characterCount = this.props.title.length
+      } else {
+        characterCount = 0
+      }
     return (
       <div>
-        {this.props.titleCharacters}
+        <p>{characterCount}</p>
       </div>
     )
   }
@@ -13,7 +20,8 @@ class TitleCharCount extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    titleCharacters: state.titleCharacters
+    title: state.title,
+    titleChar: state.titleChar
   }
 }
 
