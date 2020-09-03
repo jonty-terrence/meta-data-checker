@@ -297,6 +297,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 var characterCount = '';
+var textColor = 'defaultColor';
 
 var DescriptionCharCount = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(DescriptionCharCount, _React$Component);
@@ -318,7 +319,17 @@ var DescriptionCharCount = /*#__PURE__*/function (_React$Component) {
         characterCount = 0;
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, characterCount));
+      if (characterCount === 0) {
+        textColor = 'defaultColor';
+      } else if (characterCount < 120 || characterCount > 158) {
+        textColor = 'warningColor';
+      } else {
+        textColor = 'optimalColor';
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        className: textColor
+      }, characterCount));
     }
   }]);
 
@@ -523,6 +534,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 var characterCount = '';
+var textColor = 'defaultColor';
 
 var TitleCharCount = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(TitleCharCount, _React$Component);
@@ -544,7 +556,17 @@ var TitleCharCount = /*#__PURE__*/function (_React$Component) {
         characterCount = 0;
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, characterCount));
+      if (characterCount === 0) {
+        textColor = 'defaultColor';
+      } else if (characterCount < 50 || characterCount > 60) {
+        textColor = 'warningColor';
+      } else if (characterCount > 50 || characterCount < 60) {
+        textColor = 'optimalColor';
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        className: textColor
+      }, characterCount));
     }
   }]);
 

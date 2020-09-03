@@ -14,9 +14,9 @@ class TitleCharCount extends React.Component {
 
     if (characterCount === 0) {
       textColor = 'defaultColor'
-    } else if (characterCount < 120 || characterCount > 158) {
+    } else if (characterCount < 50 || characterCount > 60) {
       textColor = 'warningColor'
-    } else {
+    } else if (characterCount > 50 || characterCount < 60) {
       textColor = 'optimalColor'
     }
 
