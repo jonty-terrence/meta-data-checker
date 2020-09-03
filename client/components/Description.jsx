@@ -1,11 +1,21 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { collectDescription } from '../actions'
+
+function handleChange (e, dispatch) {
+  dispatch(collectDescription(e.target.value))
+}
 
 class Description extends React.Component {
   render () {
     return (
       <div>
         <input 
-        className="description-input"
+          type="text"
+          id="description"
+          className="description-input"
+          placeholder="Start writing your description here"
+          onChange={e => handleChange(e, this.props.dispatch)}
         >
         </input>
       </div>
@@ -13,4 +23,10 @@ class Description extends React.Component {
   }
 }
 
-export default Description
+const mapStateToProps = state => {
+  return {
+    description: state.description
+  }
+}
+
+export default connect(mapStateToProps)(Description)
