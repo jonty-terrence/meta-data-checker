@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import TitleCharCount from './TitleCharCount'
+import DescriptionCharCount from './DescriptionCharCount'
 
 class Preview extends React.Component {
   render () {
@@ -10,6 +11,7 @@ class Preview extends React.Component {
         <h3>{this.props.title}</h3>
         <TitleCharCount />
         <p>{this.props.description}</p>
+        <DescriptionCharCount />
       </div>
     )
   }
