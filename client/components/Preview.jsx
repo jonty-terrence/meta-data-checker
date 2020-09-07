@@ -10,6 +10,7 @@ class Preview extends React.Component {
       <div>
         <h3>{this.props.title}</h3>
         <TitleCharCount />
+        <p>{this.props.url}</p>
         <p>{this.props.description}</p>
         <DescriptionCharCount />
       </div>
@@ -20,7 +21,8 @@ class Preview extends React.Component {
 const mapStateToProps = state => {
   return {
     title: state.title,
-    description: state.description
+    description: state.description,
+    url: state.url
   }
 }
 
