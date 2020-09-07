@@ -10,8 +10,9 @@ router.post('/', (req, res) => {
     title: title,
     description: description
   }
-  return fs.appendFile('./metaData.JSON', newData, (err) => {
+  return fs.appendFile('./metaData.json', newData, (err) => {
     if (err) throw err
+    console.log('Added to file successfully')
   })
 })
 

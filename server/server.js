@@ -6,7 +6,7 @@ const server = express()
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
-const metaInfo = require('./routes/')
+const metaInfo = require('./routes.js')
 
 server.use('/api/v1/', metaInfo)
 

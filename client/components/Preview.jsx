@@ -13,6 +13,7 @@ class Preview extends React.Component {
         <p>{this.props.url}</p>
         <p>{this.props.description}</p>
         <DescriptionCharCount />
+        <button>Save Meta Data</button>
       </div>
     )
   }
