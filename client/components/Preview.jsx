@@ -1,8 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { addToFile } from '../api/metaData'
+
 import TitleCharCount from './TitleCharCount'
 import DescriptionCharCount from './DescriptionCharCount'
+
+const carryInfo = (data) => {
+  addToFile(data)
+}
 
 class Preview extends React.Component {
   render () {
@@ -13,7 +19,7 @@ class Preview extends React.Component {
         <p>{this.props.url}</p>
         <p>{this.props.description}</p>
         <DescriptionCharCount />
-        <button>Save Meta Data</button>
+        <button onClick={() => carryInfo(this.props)}>Save Meta Data</button>
       </div>
     )
   }
