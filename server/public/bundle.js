@@ -135,42 +135,12 @@ var collectUrl = function collectUrl(url) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addToFile", function() { return addToFile; });
-/* harmony import */ var _requestor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./requestor */ "./client/api/requestor.js");
-
-function addToFile(addedData) {
-  return Object(_requestor__WEBPACK_IMPORTED_MODULE_0__["default"])('/', 'post', addedData).then(function (res) {
-    return res.body;
-  });
-}
-
-/***/ }),
-
-/***/ "./client/api/requestor.js":
-/*!*********************************!*\
-  !*** ./client/api/requestor.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return consume; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
 
-var baseUrl = '/api/v1';
-function consume(endpoint) {
-  var method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'get';
-  var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-  var payLoadMethod = method.toLowerCase() === 'get' ? 'query' : 'send';
-  var headers = {
-    Accept: 'application/json'
-  };
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a[method](baseUrl + endpoint).set(headers)[payLoadMethod](data).then(function (res) {
-    return res;
-  })["catch"](function (err) {
-    throw err;
-  });
+var dataUrl = 'http://localhost:3000/api/v1';
+function addToFile(data) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.post(dataUrl).send(data);
 }
 
 /***/ }),
@@ -429,7 +399,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _api_metaData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../api/metaData */ "./client/api/metaData.js");
+/* harmony import */ var _api_metaData_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../api/metaData.js */ "./client/api/metaData.js");
 /* harmony import */ var _TitleCharCount__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TitleCharCount */ "./client/components/TitleCharCount.jsx");
 /* harmony import */ var _DescriptionCharCount__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./DescriptionCharCount */ "./client/components/DescriptionCharCount.jsx");
 
@@ -449,7 +419,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 var carryInfo = function carryInfo(data) {
-  Object(_api_metaData__WEBPACK_IMPORTED_MODULE_7__["addToFile"])(data);
+  Object(_api_metaData_js__WEBPACK_IMPORTED_MODULE_7__["addToFile"])(data);
 };
 
 var Preview = /*#__PURE__*/function (_React$Component) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addToFile } from '../api/metaData'
+import { addToFile } from '../api/metaData.js'
 
 import TitleCharCount from './TitleCharCount'
 import DescriptionCharCount from './DescriptionCharCount'

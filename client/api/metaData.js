@@ -1,8 +1,9 @@
-import consume from './requestor'
+import request from 'superagent'
 
-export function addToFile (addedData) {
-  return consume('/', 'post', addedData)
-    .then(res => {
-      return res.body
-    })
+const dataUrl = 'http://localhost:3000/api/v1'
+
+export function addToFile (data) {
+  return request
+    .post(dataUrl)
+    .send(data)
 }
