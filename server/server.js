@@ -8,7 +8,7 @@ server.use(express.static(path.join(__dirname, './public')))
 
 const metaInfo = require('./routes.js')
 
-server.use('/api/v1/', metaInfo)
+server.use('/api/v1', metaInfo)
 
 server.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'))
