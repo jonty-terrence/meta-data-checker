@@ -15,9 +15,9 @@ class Preview extends React.Component {
     return (
       <div className="preview-container">
         <h3 className="preview-title">{this.props.title}</h3>
-        <TitleCharCount />
         <p className="preview-url">{this.props.url}</p>
         <p className="preview-description">{this.props.description}</p>
+        <TitleCharCount />
         <DescriptionCharCount />
         <button onClick={() => carryInfo(this.props)}>Save Meta Data</button>
       </div>
