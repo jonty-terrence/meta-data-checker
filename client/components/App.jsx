@@ -8,10 +8,12 @@ import Preview from './Preview'
 class App extends React.Component {
   render () {
     return (
-      <div>
-        <Url />
-        <Title />
-        <Description />
+      <div className="body-container">
+        <div className="input-container">
+          <Url />
+          <Title />
+          <Description />
+        </div>
         <Preview />
       </div>
     )

@@ -13,11 +13,11 @@ const carryInfo = (data) => {
 class Preview extends React.Component {
   render () {
     return (
-      <div>
-        <h3>{this.props.title}</h3>
+      <div className="preview-container">
+        <h3 className="preview-title">{this.props.title}</h3>
         <TitleCharCount />
-        <p>{this.props.url}</p>
-        <p>{this.props.description}</p>
+        <p className="preview-url">{this.props.url}</p>
+        <p className="preview-description">{this.props.description}</p>
         <DescriptionCharCount />
         <button onClick={() => carryInfo(this.props)}>Save Meta Data</button>
       </div>

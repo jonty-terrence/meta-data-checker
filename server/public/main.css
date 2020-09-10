@@ -1,3 +1,17 @@
+.body-container {
+    display: inline-flex;
+    width: 100vw;
+    align-items: center;
+}
+
+.input-container {
+    width: 50%;
+}
+
+.preview-container {
+    width: 50%;
+}
+
 .defaultColor {
     color: black
 }
