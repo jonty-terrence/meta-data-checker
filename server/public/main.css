@@ -9,7 +9,34 @@
 }
 
 .preview-container {
+    font-family: arial, sans-serif;
     width: 50%;
+}
+
+.preview-title {
+    text-decoration: none;
+    color:#033bbf;
+    font-weight:normal;
+    margin: 0;
+    font-size: 18px !important;
+}
+
+.preview-title:hover {
+    text-decoration: underline;
+}
+
+.preview-url {
+    color: #006621;
+    font-style: normal;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.preview-description {
+  color: #545454;
+  font-size: small;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
 .defaultColor {
