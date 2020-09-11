@@ -10,6 +10,7 @@ class Url extends React.Component {
   render () {
     return (
       <div>
+        <p className="url-label">URL</p>
         <input
           type="text"
           id="url"

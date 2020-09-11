@@ -10,6 +10,7 @@ class Title extends React.Component {
   render () {
     return (
       <div>
+        <p className="title-label">Title</p>
         <input
           type="text"
           id="title"
