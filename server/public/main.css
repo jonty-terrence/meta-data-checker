@@ -5,12 +5,18 @@
 }
 
 .input-container {
-    width: 50%;
+    width: 45%;
 }
 
 .preview-container {
     font-family: arial, sans-serif;
-    width: 50%;
+    width: 45%;
+}
+
+.count-container {
+    font-family: arial, sans-serif;
+    width: 10%;
+    font-size: small;
 }
 
 .preview-title {
@@ -28,6 +34,7 @@
 .preview-url {
     color: #006621;
     font-style: normal;
+    margin: 0.2rem;
     font-size: 14px;
     display: inline-block;
 }
@@ -37,6 +44,7 @@
   font-size: small;
   line-height: 1.4;
   word-wrap: break-word;
+  margin-top: 0.2rem;
 }
 
 .defaultColor {
@@ -49,4 +57,82 @@
 
 .optimalColor {
     color: green
+}
+
+.title-input {
+    width: 30vw;
+    height: 5vh;
+    background-color: #DBE5E4;
+    border: none;
+    outline: none;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+    margin: 1%;
+}
+
+.title-input:focus {
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+}
+
+.description-input {
+    width: 35vw;
+    height: 8vh;
+    background-color: #DBE5E4;
+    border: none;
+    outline: none;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+    margin: 1%;
+}
+
+.description-input:focus {
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+}
+
+.url-input {
+    width: 20vw;
+    height: 4vh;
+    background-color: #DBE5E4;
+    border: none;
+    outline: none;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+    margin: 1%;
+}
+
+.url-input:focus {
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+}
+
+.title-label {
+    margin-left: 1%;
+    color: #8d9aa6;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+.url-label {
+    margin-left: 1%;
+    color: #8d9aa6;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+.description-label {
+    margin-left: 1%;
+    color: #8d9aa6;
+    text-transform: uppercase;
+    font-size: small;
 }

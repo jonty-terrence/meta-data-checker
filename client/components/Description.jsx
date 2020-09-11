@@ -10,6 +10,7 @@ class Description extends React.Component {
   render () {
     return (
       <div>
+        <p className="description-label">Description</p>
         <input 
           type="text"
           id="description"
