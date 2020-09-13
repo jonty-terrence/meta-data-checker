@@ -1,12 +1,13 @@
 {
-  "name": "react-project-boilerplate",
+  "name": "meta-data-checker",
   "version": "1.0.0",
-  "description": "A simple boilerplate for react projects",
+  "description": "A place to write, optimise and visualise meta data",
   "main": "index.js",
   "author": "Jonty Buchan",
   "license": "MIT",
   "scripts": {
     "lint": "npx eslint . --ext .js,.jsx --ignore-path .eslintignore",
+    "build": "webpack --config webpack.config.js",
     "dev:build": "webpack --config webpack.config.js",
     "start": "node server",
     "test": "jest --verbose --noStackTrace",
@@ -48,6 +49,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "heroku": "^7.42.13",
     "knex": "^0.21.5",
     "superagent": "^6.1.0"
   },
