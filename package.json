@@ -11,17 +11,10 @@
     "dev:build": "webpack --config webpack.config.js",
     "start": "node server",
     "test": "jest --verbose --noStackTrace",
-    "e2e": "cypress run",
     "test:watch": "npm test -- --watchAll",
     "dev": "run-p dev:server dev:client",
     "dev:server": "nodemon server",
     "dev:client": "webpack --config webpack.config.js --watch",
-    "knex": "knex --knexfile server/db/knexfile.js",
-    "db:reset": "run-s db:delete db:migrate db:seed",
-    "db:migrate": "npm run knex migrate:latest",
-    "db:seed": "npm run knex seed:run",
-    "db:delete": "rm -f server/db/dev.sqlite3",
-    "postinstall": "run-s db:migrate db:seed build"
   },
   "engines": {
     "node": "12.x"
