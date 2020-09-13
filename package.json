@@ -14,7 +14,7 @@
     "test:watch": "npm test -- --watchAll",
     "dev": "run-p dev:server dev:client",
     "dev:server": "nodemon server",
-    "dev:client": "webpack --config webpack.config.js --watch",
+    "dev:client": "webpack --config webpack.config.js --watch"
   },
   "engines": {
     "node": "12.x"
