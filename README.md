@@ -13,6 +13,7 @@ This project is currently a work in progress and will soon allow users to save t
 To run the website locally, enter the following commands in your terminal:
 
 > npm i
+
 > npm run dev
 
 View locally on http://localhost:3000/
