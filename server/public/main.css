@@ -6,6 +6,10 @@
     display: inline-flex;
     width: 100vw;
     align-items: center;
+    height: 90vh;
+    border-top: solid;
+    border-top-color: lightgrey;
+    border-top-width: 2px;
 }
 
 .header-container {
@@ -23,17 +27,24 @@
 .input-container {
     font-family: 'Oswald', sans-serif;
     width: 45%;
+    padding-left: 2%;
+    height: 100%;
+    border-right: solid lightgrey 2px;
 }
 
 .preview-container {
     font-family: arial, sans-serif;
     width: 45%;
+    padding-left: 2%;
+    margin-top: -35%;
 }
 
 .count-container {
     font-family: 'Oswald', sans-serif;
     width: 10%;
     font-size: small;
+    margin-top: -35%;
+    padding-left: 5%;
 }
 
 .preview-title {
