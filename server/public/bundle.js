@@ -212,7 +212,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         className: "body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "input-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Url__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Title__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Description__WEBPACK_IMPORTED_MODULE_9__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Preview__WEBPACK_IMPORTED_MODULE_10__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Enter your meta tags here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Url__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Title__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Description__WEBPACK_IMPORTED_MODULE_9__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Preview__WEBPACK_IMPORTED_MODULE_10__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "count-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_TitleCharCount__WEBPACK_IMPORTED_MODULE_11__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_DescriptionCharCount__WEBPACK_IMPORTED_MODULE_12__["default"], null))));
     }
@@ -515,7 +515,7 @@ var Preview = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "preview-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Preview of Your Meta Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
         className: "preview-title"
       }, this.props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
         className: "preview-url"
@@ -842,7 +842,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions */ "./client/actions/index.js");
 
 function collectDescription() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!';
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Write your meta titles and descriptions here so you can preview how it might look when users see your website in Search Result Pages. ';
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
