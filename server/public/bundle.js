@@ -529,19 +529,13 @@ var PopUp = /*#__PURE__*/function (_React$Component) {
           className: "content"
         }, ' ', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum. Dolorem, repellat quidem ut, minima sint vel eveniet quibusdam voluptates delectus doloremque, explicabo tempore dicta adipisci fugit amet dignissimos?", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit commodi beatae optio voluptatum sed eius cumque, delectus saepe repudiandae explicabo nemo nam libero ad, doloribus, voluptas rem alias. Vitae?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           className: "actions"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(reactjs_popup__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          trigger: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
-            className: "button"
-          }, " Trigger "),
-          position: "top center",
-          nested: true
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
           className: "button",
           onClick: function onClick() {
             console.log('modal closed ');
             close();
           }
-        }, "close modal")));
+        }, "Exit")));
       }));
     }
   }]);
