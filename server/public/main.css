@@ -171,6 +171,22 @@ h1 {
     font-size: small;
 }
 
+.save-button {
+	background-color:white;
+	display:inline-block;
+	cursor:pointer;
+	color: grey;
+	font-size:15px;
+	padding:6.5px 16px;
+    text-decoration:none;
+    border-radius: 3px;
+}
+
+.save-button:active {
+	position:relative;
+	top:1px;
+}
+
 .description-label {
     margin-left: 1%;
     color: #8d9aa6;

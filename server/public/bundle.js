@@ -524,7 +524,8 @@ var Preview = /*#__PURE__*/function (_React$Component) {
       }, this.props.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
         onClick: function onClick() {
           return carryInfo(_this.props);
-        }
+        },
+        className: "save-button"
       }, "Save Meta Data"));
     }
   }]);
