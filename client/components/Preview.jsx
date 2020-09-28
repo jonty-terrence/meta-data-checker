@@ -1,4 +1,5 @@
 import React from 'react'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { connect } from 'react-redux'
 
 import { addToFile } from '../api/metaData.js'
@@ -15,6 +16,12 @@ class Preview extends React.Component {
         <h3 className="preview-title">{this.props.title}</h3>
         <p className="preview-url">{this.props.url}</p>
         <p className="preview-description">{this.props.description}</p>
+        <CopyToClipboard text={this.props.title} onCopy={this.onCopy}>
+          <button>Copy Meta Title</button>
+        </CopyToClipboard>
+        <CopyToClipboard text={this.props.description} onCopy={this.onCopy}>
+          <button>Copy Meta Description</button>
+        </CopyToClipboard>
         <button onClick={() => carryInfo(this.props)} className="save-button">Save Meta Data</button>
       </div>
     )
