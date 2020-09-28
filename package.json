@@ -45,6 +45,7 @@
     "heroku": "^7.42.13",
     "knex": "^0.21.5",
     "react-copy-to-clipboard": "^5.0.2",
+    "reactjs-popup": "^2.0.4",
     "superagent": "^6.1.0"
   },
   "devDependencies": {
@@ -62,6 +63,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.3.0",
     "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
     "cypress": "^5.0.0",
     "eslint": "^7.6.0",
     "eslint-config-standard": "^14.1.1",
@@ -79,6 +81,7 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "ts-loader": "^8.0.4",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"

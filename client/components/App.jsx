@@ -7,6 +7,7 @@ import Description from './Description'
 import Preview from './Preview'
 import TitleCharCount from './TitleCharCount'
 import DescriptionCharCount from './DescriptionCharCount'
+import PopUp from './PopUp'
 
 class App extends React.Component {
   render () {
@@ -19,6 +20,7 @@ class App extends React.Component {
             <Url />
             <Title />
             <Description />
+            <PopUp />
           </div>
           <Preview />
           <div className="count-container">
