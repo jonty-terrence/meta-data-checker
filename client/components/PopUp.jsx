@@ -8,7 +8,7 @@ class PopUp extends React.Component {
     return (
       <>
         <Popup
-          trigger={<button className="button"> Open Modal </button>}
+          trigger={<button className="button"> Generate Meta Tags </button>}
           modal
           nested
         >
@@ -17,7 +17,7 @@ class PopUp extends React.Component {
               <button className="close" onClick={close}>
           &times;
               </button>
-              <div className="header"> Modal Title </div>
+              <div className="header"> Your Meta Tags </div>
               <div className="content">
                 {' '}
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum.

@@ -200,11 +200,14 @@ button {
 
 .modal {
     font-size: 12px;
-    background-color: grey;
+    background: rgb(146,255,101);
+    background: linear-gradient(180deg, rgba(146,255,101,0.8589810924369747) 0%, rgba(255,255,255,0) 100%);
+    width: 100%;
+    height: 100vh;
 
   }
   .modal > .header {
-    width: 100%;
+    width: 100vw;
     border-bottom: 1px solid gray;
     font-size: 18px;
     text-align: center;
