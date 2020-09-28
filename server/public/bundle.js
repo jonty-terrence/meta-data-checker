@@ -527,7 +527,7 @@ var PopUp = /*#__PURE__*/function (_React$Component) {
           className: "header"
         }, " Your Meta Tags "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           className: "content"
-        }, ' ', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum. Dolorem, repellat quidem ut, minima sint vel eveniet quibusdam voluptates delectus doloremque, explicabo tempore dicta adipisci fugit amet dignissimos?", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit commodi beatae optio voluptatum sed eius cumque, delectus saepe repudiandae explicabo nemo nam libero ad, doloribus, voluptas rem alias. Vitae?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        }, ' ', "<!-- Copy this code into the head section of your website -->", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), "<title>Meta Tags \u2014 Preview, Edit and Generate</title>", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), "<meta name=\"title\" content=\"Meta Tags \u2014 Preview, Edit and Generate\">", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), "<meta name=\"description\" content=\"With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!\"></meta>", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           className: "actions"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
           className: "button",
@@ -545,7 +545,8 @@ var PopUp = /*#__PURE__*/function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    title: state.title
+    title: state.title,
+    description: state.description
   };
 };
 

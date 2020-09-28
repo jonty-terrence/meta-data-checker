@@ -20,13 +20,14 @@ class PopUp extends React.Component {
               <div className="header"> Your Meta Tags </div>
               <div className="content">
                 {' '}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum.
-                Dolorem, repellat quidem ut, minima sint vel eveniet quibusdam voluptates
-                delectus doloremque, explicabo tempore dicta adipisci fugit amet dignissimos?
+                &#60;!-- Copy this code into the head section of your website --&#62;
                 <br />
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit
-                commodi beatae optio voluptatum sed eius cumque, delectus saepe repudiandae
-                explicabo nemo nam libero ad, doloribus, voluptas rem alias. Vitae?
+                &#60;title&#62;Meta Tags — Preview, Edit and Generate&#60;/title&#62;
+                <br />
+                &#60;meta name=&#34;title&#34; content=&#34;Meta Tags — Preview, Edit and Generate&#34;&#62;
+                <br />
+                &#60;meta name=&#34;description&#34; content=&#34;With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!&#34;&#62;&#60;/meta&#62;
+                <br />
               </div>
               <div className="actions">
                 <button
@@ -49,7 +50,8 @@ class PopUp extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    title: state.title
+    title: state.title,
+    description: state.description
   }
 }
 
