@@ -200,7 +200,6 @@ button {
 
 .modal {
     font-family: 'Oswald', sans-serif;
-    font-size: 12px;
     text-align: center;
     background: rgb(146,255,101);
     background: linear-gradient(180deg, rgba(146,255,101,0.8589810924369747) 0%, rgba(255,255,255,0) 100%);
@@ -212,13 +211,6 @@ button {
     left: 0;
   }
 
-
-  .modal > .header {
-    width: 100vw;
-    font-size: 18px;
-    text-align: center;
-    padding: 5px;
-  }
 
   .modal-content {
     width: 75%;
@@ -232,9 +224,25 @@ button {
     margin: auto;
   }
 
+  .header {
+      font-size: 25px;
+      padding-top: 3%;
+      padding-bottom: 2%;
+  }
+
   .modal > .content {
-    width: 100%;
+    width: 80%;
     padding: 10px 5px;
+  }
+
+  .content {
+      margin: 2%;
+      background-color: grey;
+      padding: 2%;
+      color: white;
+      font-family: 'Source Code Pro', monospace;
+      line-height: 4vh;
+
   }
 
   .modal > .actions {
