@@ -516,7 +516,7 @@ var PopUp = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(reactjs_popup__WEBPACK_IMPORTED_MODULE_6__["default"], {
         trigger: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
           className: "button"
-        }, " Generate Meta Tags "),
+        }, " </> Generate Meta Tags "),
         modal: true,
         nested: true
       }, function (close) {
@@ -526,6 +526,8 @@ var PopUp = /*#__PURE__*/function (_React$Component) {
           className: "close",
           onClick: close
         }, "\xD7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+          className: "modal-content"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           className: "header"
         }, " Your Meta Tags "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           className: "content"
@@ -537,7 +539,7 @@ var PopUp = /*#__PURE__*/function (_React$Component) {
             console.log('modal closed ');
             close();
           }
-        }, "Exit")));
+        }, "Exit"))));
       }));
     }
   }]);
