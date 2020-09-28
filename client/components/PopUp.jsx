@@ -22,11 +22,11 @@ class PopUp extends React.Component {
                 {' '}
                 &#60;!-- Copy this code into the head section of your website --&#62;
                 <br />
-                &#60;title&#62;Meta Tags — Preview, Edit and Generate&#60;/title&#62;
+                &#60;title&#62;{this.props.title}&#60;/title&#62;
                 <br />
-                &#60;meta name=&#34;title&#34; content=&#34;Meta Tags — Preview, Edit and Generate&#34;&#62;
+                &#60;meta name=&#34;title&#34; content=&#34;{this.props.title}&#34;&#62;
                 <br />
-                &#60;meta name=&#34;description&#34; content=&#34;With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!&#34;&#62;&#60;/meta&#62;
+                &#60;meta name=&#34;description&#34; content=&#34;{this.props.description}&#34;&#62;&#60;/meta&#62;
                 <br />
               </div>
               <div className="actions">
