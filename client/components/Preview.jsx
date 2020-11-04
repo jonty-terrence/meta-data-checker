@@ -1,11 +1,31 @@
 import React from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { connect } from 'react-redux'
-
-import { addToFile } from '../api/metaData.js'
+import firebase from 'firebase'
 
 const carryInfo = (data) => {
-  addToFile(data)
+  writeUserData(data.url, data.title, data.description)
+}
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDlvYyJk13Oa2dIb5TlmuFRvTyfTZ6b-44',
+  authDomain: 'meta-data-checker.firebaseapp.com',
+  databaseURL: 'https://meta-data-checker.firebaseio.com',
+  projectId: 'meta-data-checker',
+  storageBucket: 'meta-data-checker.appspot.com',
+  messagingSenderId: '275652737293',
+  appId: '1:275652737293:web:e32267586219ff64bb1844',
+  measurementId: 'G-BP0VV7EMG4'
+}
+
+firebase.initializeApp(firebaseConfig)
+
+function writeUserData (url, title, description) {
+  firebase.database().ref('metaData/' + url).set({
+    title: title,
+    description: description,
+    url: url
+  })
 }
 
 class Preview extends React.Component {
