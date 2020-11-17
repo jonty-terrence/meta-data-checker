@@ -20,6 +20,9 @@ class App extends React.Component {
           <PopUp />
         </div>
         <Preview />
+        <div className="footer">
+          <h2>Im the footer</h2>
+        </div>
       </div>
     )
   }
