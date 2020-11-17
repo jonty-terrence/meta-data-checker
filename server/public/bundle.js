@@ -584,6 +584,10 @@ var carryInfo = function carryInfo(data) {
   writeUserData(data.url, data.title, data.description);
 };
 
+var deleteButton = function deleteButton() {
+  deleteUserData();
+};
+
 var firebaseConfig = {
   apiKey: 'AIzaSyDlvYyJk13Oa2dIb5TlmuFRvTyfTZ6b-44',
   authDomain: 'meta-data-checker.firebaseapp.com',
@@ -602,6 +606,10 @@ function writeUserData(url, title, description) {
     description: description,
     url: url
   });
+}
+
+function deleteUserData() {
+  firebase__WEBPACK_IMPORTED_MODULE_8__["default"].database().ref('metaData').set(null);
 }
 
 var Preview = /*#__PURE__*/function (_React$Component) {
@@ -643,7 +651,11 @@ var Preview = /*#__PURE__*/function (_React$Component) {
           return carryInfo(_this.props);
         },
         className: "save-button"
-      }, "Save")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, "Save"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
+        onClick: function onClick() {
+          return deleteButton();
+        }
+      }, "Delete")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "count-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_TitleCharCount__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_DescriptionCharCount__WEBPACK_IMPORTED_MODULE_10__["default"], null)));
     }

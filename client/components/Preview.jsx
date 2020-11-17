@@ -10,6 +10,10 @@ const carryInfo = (data) => {
   writeUserData(data.url, data.title, data.description)
 }
 
+const deleteButton = () => {
+  deleteUserData()
+}
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDlvYyJk13Oa2dIb5TlmuFRvTyfTZ6b-44',
   authDomain: 'meta-data-checker.firebaseapp.com',
@@ -31,6 +35,10 @@ function writeUserData (url, title, description) {
   })
 }
 
+function deleteUserData () {
+  firebase.database().ref('metaData').set(null)
+}
+
 class Preview extends React.Component {
   render () {
     return (
@@ -49,6 +57,7 @@ class Preview extends React.Component {
             <button>Copy Description</button>
           </CopyToClipboard>
           <button onClick={() => carryInfo(this.props)} className="save-button">Save</button>
+          <button onClick={() => deleteButton()}>Delete</button>
         </div>
         <div className="count-container">
           <TitleCharCount />
