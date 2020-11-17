@@ -258,13 +258,12 @@ var Description = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "description-input"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
         className: "description-label"
       }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("input", {
         type: "text",
         id: "description",
+        className: "description-input",
         placeholder: "Start writing your description here",
         onChange: function onChange(e) {
           return handleChange(e, _this.props.dispatch);
@@ -320,8 +319,12 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+var start = 'Be sure to keep your descriptions within 120-158 characters.';
+var warning = 'Be sure to keep your descriptions within 120-158 characters. Currently it is:';
+var perfect = 'Great work, your description is the ideal length!';
 var characterCount = '';
 var textColor = 'defaultColor';
+var text = '';
 
 var DescriptionCharCount = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(DescriptionCharCount, _React$Component);
@@ -345,15 +348,18 @@ var DescriptionCharCount = /*#__PURE__*/function (_React$Component) {
 
       if (characterCount === 0) {
         textColor = 'defaultColor';
+        text = start;
       } else if (characterCount < 120 || characterCount > 158) {
         textColor = 'warningColor';
+        text = warning;
       } else {
         textColor = 'optimalColor';
+        text = perfect;
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
         className: textColor
-      }, characterCount));
+      }, text, " ", characterCount, " characters"));
     }
   }]);
 
@@ -776,8 +782,12 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+var start = 'Be sure to keep your titles within 50-60 characters.';
+var warning = 'Be sure to keep your titles within 50-60 characters. Currently it is:';
+var perfect = 'Great work, your title is the ideal length!';
 var characterCount = '';
 var textColor = 'defaultColor';
+var text = start;
 
 var TitleCharCount = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(TitleCharCount, _React$Component);
@@ -801,15 +811,18 @@ var TitleCharCount = /*#__PURE__*/function (_React$Component) {
 
       if (characterCount === 0) {
         textColor = 'defaultColor';
+        text = start;
       } else if (characterCount < 50 || characterCount > 60) {
         textColor = 'warningColor';
+        text = warning;
       } else if (characterCount > 50 || characterCount < 60) {
         textColor = 'optimalColor';
+        text = perfect;
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
         className: textColor
-      }, characterCount));
+      }, text, " ", characterCount, " characters"));
     }
   }]);
 
@@ -885,7 +898,9 @@ var Url = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
         className: "url-label"
-      }, "URL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("input", {
+      }, "URL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "group"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("input", {
         type: "text",
         id: "url",
         className: "url-input",
@@ -893,7 +908,7 @@ var Url = /*#__PURE__*/function (_React$Component) {
         onChange: function onChange(e) {
           return handleChange(e, _this.props.dispatch);
         }
-      }));
+      })));
     }
   }]);
 
