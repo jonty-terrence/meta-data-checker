@@ -1,63 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
 .main-container {
-    width: 100%;
-}
-
-.body-container {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 20% 40% 1fr;
+    gap: 30px;
     width: 100vw;
-    align-items: center;
-    height: 90vh;
-    border-top: solid;
-    border-top-color: lightgrey;
-    border-top-width: 1.5px;
-}
-
-h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
-    padding-top: 5%;
-    padding-left: 0.5%;
-    padding-bottom: 1%;
-    color: lightgray;
-    font-weight: lighter;
+    height: 100vh;
+    box-sizing: border-box;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .header-container {
-    margin: 0;
-    width: 100%;
-    display: inline-block;
-    text-align: left;
+    grid-area: 1 / 1 / 2 / 4;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logo {
-    width: 12rem;
-    margin: 1rem;
+.header-container h1 {
+    justify-self: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    color: #4051A3;
+    letter-spacing: 0.2px;
+    font-size: 5em;
 }
 
 .input-container {
-    font-family: 'Oswald', sans-serif;
-    width: 45%;
-    padding-left: 2%;
-    height: 100%;
-    border-right: solid lightgrey 1.5px;
+    grid-area: 2 / 3 / 3 / 4;
+    border: 2px solid #EC256A;
+    padding: 2%;
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(236,37,106,1);
+-moz-box-shadow: -10px 9px 0px 0px rgba(236,37,106,1);
+box-shadow: -10px 9px 0px 0px rgba(236,37,106,1);
+}
+
+.input-container h2 {
+    font-size: 1.5em;
+}
+
+.input-container p {
+    font-weight: 600;
+    color: #7E4198;
+    margin-bottom: 10px;
+}
+
+.input-container input {
+    font-family: 'IBM Plex Sans', sans-serif;
+    padding-left: 3%;
+    width: 80%;
+    border: 2px solid #EC256A;
+    line-height: 25px
 }
 
 .preview-container {
+    grid-area: 2 / 1 / 3 / 3;
+    border: 2px solid #4051A3;
+    padding: 2%;
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+-moz-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+} 
+
+.preview-container h2 {
+    font-size: 1.5em;
+}
+
+.preview-container button {
+    border: 2px solid #4051A3;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    line-height: 35px;
+    width: 20%;
+    color: white;
+    background-color: #4051A3;
+    cursor: pointer;
+}
+
+.buttons {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+}
+
+.google-preview {
     font-family: arial, sans-serif;
-    width: 45%;
-    padding-left: 2%;
-    margin-top: -35%;
 }
 
-.count-container {
-    font-family: 'Oswald', sans-serif;
-    width: 10%;
-    font-size: small;
-    margin-top: -35%;
-    padding-left: 5%;
-}
-
-.preview-title {
+.google-preview h3 {
     text-decoration: none;
     color:#033bbf;
     font-weight:normal;
@@ -65,7 +101,7 @@ h1 {
     font-size: 18px !important;
 }
 
-.preview-title:hover {
+.google-preview h3:hover {
     text-decoration: underline;
 }
 
@@ -78,137 +114,66 @@ h1 {
 }
 
 .preview-description {
-  color: #545454;
-  font-size: small;
-  line-height: 1.4;
-  word-wrap: break-word;
-  margin-top: 0.2rem;
-}
+    color: #545454;
+    font-size: small;
+    line-height: 1.4;
+    word-wrap: break-word;
+    margin-top: 0.2rem;
+  }
 
 .defaultColor {
-    color: black
+    color: black;
+    font-size: 12px;
 }
 
 .warningColor {
-    color: red
+    color: red;
+    font-size: 12px;
 }
 
 .optimalColor {
-    color: green
+    color: green;
+    font-size: 12px;
 }
 
-.title-input {
-    width: 30vw;
-    height: 5vh;
-    background-color: #DBE5E4;
-    border: none;
-    outline: none;
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    padding: 5px;
-    margin: 1%;
-    font-family: 'Oswald', sans-serif;
+.footer {
+    grid-area: 3 / 1 / 4 / 4;
+    border: 2px solid #4051A3;
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+    -moz-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+    box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);  
 }
 
-.title-input:focus {
-    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
-    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
-    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
+.popup {
+    position: fixed;
+    top: 7.5%;
+    left: 10%;
 }
 
-.description-input {
-    width: 35vw;
-    height: 8vh;
-    background-color: #DBE5E4;
-    border: none;
-    outline: none;
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    padding: 5px;
-    margin: 1%;
-    font-family: 'Oswald', sans-serif;
-}
-
-.description-input:focus {
-    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
-    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
-    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
-}
-
-.url-input {
-    width: 20vw;
-    height: 4vh;
-    background-color: #DBE5E4;
-    border: none;
-    outline: none;
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    padding: 5px;
-    margin: 1%;
-    font-family: 'Oswald', sans-serif;
-}
-
-.url-input:focus {
-    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
-    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
-    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.24);
-}
-
-.title-label {
-    margin-left: 1%;
-    color: #8d9aa6;
-    text-transform: uppercase;
-    font-size: small;
-}
-
-.url-label {
-    margin-left: 1%;
-    color: #8d9aa6;
-    text-transform: uppercase;
-    font-size: small;
-}
-
-button {
-	background-color:white;
-	display:inline-block;
-	cursor:pointer;
-	color: #8d9aa6;
-	font-size:15px;
-	padding:6.5px 16px;
-    text-decoration:none;
-    border-width: 0.5px;
-    margin: 1%;
-    border-radius: 3px;
-    border-color: #8d9aa6;
-    font-family: 'Oswald', sans-serif;
-}
-
-.save-button:active {
-	position:relative;
-	top:1px;
-}
-
-.description-label {
-    margin-left: 1%;
-    color: #8d9aa6;
-    text-transform: uppercase;
-    font-size: small;
+.popup button {
+    border: 2px solid #4051A3;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    color: #4051A3;
+    background-color: white;    
+    border: 2px solid #4051A3;
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+    -moz-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+    box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);  
+    cursor: pointer;
 }
 
 .modal {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     text-align: center;
-    background: rgb(146,255,101);
-    background: linear-gradient(180deg, rgba(146,255,101,0.8589810924369747) 0%, rgba(255,255,255,0) 100%);
     position: relative;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    border: 2px solid #4051A3;
+ 
   }
 
 
@@ -222,12 +187,19 @@ button {
     bottom: 0;
     left: 0;
     margin: auto;
+    border: 2px solid #4051A3;
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+    -moz-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+    box-shadow: -10px 9px 0px 0px rgba(64,81,163,1); 
   }
 
   .header {
-      font-size: 25px;
-      padding-top: 3%;
-      padding-bottom: 2%;
+    justify-self: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    color: #4051A3;
+    letter-spacing: 0.2px;
+    font-size: 4em;
   }
 
   .modal > .content {
@@ -237,13 +209,23 @@ button {
 
   .content {
       margin: 2%;
-      background-color: grey;
+      background-color: #4051A3;
       padding: 2%;
       color: white;
       font-family: 'Source Code Pro', monospace;
       line-height: 4vh;
       border-radius: 3px;
+  }
 
+  .modal button {
+    border: 2px solid #4051A3;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    line-height: 35px;
+    width: 20%;
+    color: white;
+    background-color: #4051A3;
+    cursor: pointer;
   }
 
   .modal > .actions {

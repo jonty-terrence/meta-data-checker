@@ -11,14 +11,16 @@ class Url extends React.Component {
     return (
       <div>
         <p className="url-label">URL</p>
-        <input
-          type="text"
-          id="url"
-          className="url-input"
-          placeholder="Write Your URL Here"
-          onChange={e => handleChange(e, this.props.dispatch)}
-        >
-        </input>
+        <div className="group">
+          <input
+            type="text"
+            id="url"
+            className="url-input"
+            placeholder="Write Your URL Here"
+            onChange={e => handleChange(e, this.props.dispatch)}
+          >
+          </input>
+        </div>
       </div>
     )
   }
