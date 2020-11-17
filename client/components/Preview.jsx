@@ -3,6 +3,9 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 
+import TitleCharCount from './TitleCharCount'
+import DescriptionCharCount from './DescriptionCharCount'
+
 const carryInfo = (data) => {
   writeUserData(data.url, data.title, data.description)
 }
@@ -43,7 +46,12 @@ class Preview extends React.Component {
           <button>Copy Meta Description</button>
         </CopyToClipboard>
         <button onClick={() => carryInfo(this.props)} className="save-button">Save Meta Data</button>
+        <div className="count-container">
+          <TitleCharCount />
+          <DescriptionCharCount />
+        </div>
       </div>
+
     )
   }
 }

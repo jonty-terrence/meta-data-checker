@@ -4,7 +4,7 @@ class Header extends React.Component {
   render () {
     return (
       <div className="header-container">
-        <img src="./mdc-l.png" className="logo"/>
+        <h1>Meta Data Checker</h1>
       </div>
     )
   }
