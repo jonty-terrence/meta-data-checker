@@ -33,11 +33,11 @@ body {
 
 .input-container {
     grid-area: 2 / 3 / 3 / 4;
-    border: 4px solid #EC256A;
+    border: 2px solid #EC256A;
     padding: 2%;
-    -webkit-box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);
-    -moz-box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);
-    box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(236,37,106,1);
+-moz-box-shadow: -10px 9px 0px 0px rgba(236,37,106,1);
+box-shadow: -10px 9px 0px 0px rgba(236,37,106,1);
 }
 
 .input-container h2 {
@@ -60,11 +60,11 @@ body {
 
 .preview-container {
     grid-area: 2 / 1 / 3 / 3;
-    border: 4px solid #4051A3;
+    border: 2px solid #4051A3;
     padding: 2%;
-    -webkit-box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);
-    -moz-box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);
-    box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);  
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+-moz-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
 } 
 
 .preview-container h2 {
@@ -138,8 +138,108 @@ body {
 
 .footer {
     grid-area: 3 / 1 / 4 / 4;
-    border: 4px solid #4051A3;
-    -webkit-box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);
-    -moz-box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);
-    box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);  
+    border: 2px solid #4051A3;
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+-moz-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);  
 }
+
+.popup {
+    position: fixed;
+    top: 7.5%;
+    left: 10%;
+}
+
+.popup button {
+    border: 2px solid #4051A3;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    color: white;
+    background-color: #4051A3;
+    cursor: pointer;
+}
+
+.modal {
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-align: center;
+    position: relative;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid #4051A3;
+ 
+  }
+
+
+  .modal-content {
+    width: 75%;
+    height: 50%;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border: 2px solid #4051A3;
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+    -moz-box-shadow: -10px 9px 0px 0px rgba(64,81,163,1);
+    box-shadow: -10px 9px 0px 0px rgba(64,81,163,1); 
+  }
+
+  .header {
+    justify-self: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    color: #4051A3;
+    letter-spacing: 0.2px;
+    font-size: 4em;
+  }
+
+  .modal > .content {
+    width: 80%;
+    padding: 10px 5px;
+  }
+
+  .content {
+      margin: 2%;
+      background-color: #4051A3;
+      padding: 2%;
+      color: white;
+      font-family: 'Source Code Pro', monospace;
+      line-height: 4vh;
+      border-radius: 3px;
+  }
+
+  .modal button {
+    border: 2px solid #4051A3;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    line-height: 35px;
+    width: 20%;
+    color: white;
+    background-color: #4051A3;
+    cursor: pointer;
+  }
+
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+  .modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }

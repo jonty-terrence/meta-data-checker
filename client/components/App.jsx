@@ -11,6 +11,7 @@ class App extends React.Component {
   render () {
     return (
       <div className="main-container">
+        <PopUp />
         <Header />
         <div className="input-container">
           <h2>Enter your meta tags here</h2>

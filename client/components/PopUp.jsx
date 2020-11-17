@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 class PopUp extends React.Component {
   render () {
     return (
-      <>
+      <div className="popup">
         <Popup
-          trigger={<button className="button"> &#60;/&#62; Generate Meta Tags </button>}
+          trigger={<button className="button"> &#60;/&#62; Generate <br></br>Meta Tags </button>}
           modal
           nested
         >
@@ -45,7 +45,7 @@ class PopUp extends React.Component {
             </div>
           )}
         </Popup>
-      </>
+      </div>
     )
   }
 }
