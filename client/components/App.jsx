@@ -20,9 +20,6 @@ class App extends React.Component {
           <Description />
         </div>
         <Preview />
-        <div className="footer">
-          <h2>Im the footer</h2>
-        </div>
       </div>
     )
   }
