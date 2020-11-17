@@ -32,20 +32,94 @@ body {
 }
 
 .input-container {
-    grid-area: 2 / 1 / 3 / 3;
-    border: 4px solid #4051A3;
-    -webkit-box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);
-    -moz-box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);
-    box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);  
+    grid-area: 2 / 3 / 3 / 4;
+    border: 4px solid #EC256A;
+    padding: 2%;
+    -webkit-box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);
+    -moz-box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);
+    box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);
+}
+
+.input-container h2 {
+    font-size: 1.5em;
+}
+
+.input-container p {
+    font-weight: 600;
+    color: #7E4198;
+    margin-bottom: 10px;
+}
+
+.input-container input {
+    font-family: 'IBM Plex Sans', sans-serif;
+    padding-left: 3%;
+    width: 80%;
+    border: 2px solid #EC256A;
+    line-height: 25px
 }
 
 .preview-container {
-    grid-area: 2 / 3 / 3 / 4;
-    border: 4px solid #EC256A;
-    -webkit-box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);
-    -moz-box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);
-    box-shadow: -23px 22px 0px -9px rgba(236,37,106,1);  
+    grid-area: 2 / 1 / 3 / 3;
+    border: 4px solid #4051A3;
+    padding: 2%;
+    -webkit-box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);
+    -moz-box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);
+    box-shadow: -23px 22px 0px -9px rgba(64,81,163,1);  
+} 
+
+.preview-container h2 {
+    font-size: 1.5em;
 }
+
+.preview-container button {
+    border: 2px solid #4051A3;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    line-height: 35px;
+    width: 20%;
+    color: white;
+    background-color: #4051A3;
+    cursor: pointer;
+}
+
+.buttons {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+
+.google-preview {
+    font-family: arial, sans-serif;
+}
+
+.google-preview h3 {
+    text-decoration: none;
+    color:#033bbf;
+    font-weight:normal;
+    margin: 0;
+    font-size: 18px !important;
+}
+
+.google-preview h3:hover {
+    text-decoration: underline;
+}
+
+.preview-url {
+    color: #006621;
+    font-style: normal;
+    margin: 0.2rem;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.preview-description {
+    color: #545454;
+    font-size: small;
+    line-height: 1.4;
+    word-wrap: break-word;
+    margin-top: 0.2rem;
+  }
 
 .footer {
     grid-area: 3 / 1 / 4 / 4;

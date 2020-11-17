@@ -13,11 +13,10 @@ class App extends React.Component {
       <div className="main-container">
         <Header />
         <div className="input-container">
-          <h1>Enter your meta tags here</h1>
+          <h2>Enter your meta tags here</h2>
           <Url />
           <Title />
           <Description />
-          <PopUp />
         </div>
         <Preview />
         <div className="footer">
