@@ -1,7 +1,7 @@
 import React from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { connect } from 'react-redux'
-import firebase from 'firebase'
+import db from '../firebase'
 
 import TitleCharCount from './TitleCharCount'
 import DescriptionCharCount from './DescriptionCharCount'
@@ -10,33 +10,12 @@ const carryInfo = (data) => {
   writeUserData(data.url, data.title, data.description)
 }
 
-const deleteButton = () => {
-  deleteUserData()
-}
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyDlvYyJk13Oa2dIb5TlmuFRvTyfTZ6b-44',
-  authDomain: 'meta-data-checker.firebaseapp.com',
-  databaseURL: 'https://meta-data-checker.firebaseio.com',
-  projectId: 'meta-data-checker',
-  storageBucket: 'meta-data-checker.appspot.com',
-  messagingSenderId: '275652737293',
-  appId: '1:275652737293:web:e32267586219ff64bb1844',
-  measurementId: 'G-BP0VV7EMG4'
-}
-
-firebase.initializeApp(firebaseConfig)
-
 function writeUserData (url, title, description) {
-  firebase.database().ref('metaData/' + url).set({
+  db.database().ref('metaData/' + url).set({
     title: title,
     description: description,
     url: url
   })
-}
-
-function deleteUserData () {
-  firebase.database().ref('metaData').set(null)
 }
 
 class Preview extends React.Component {
@@ -57,7 +36,6 @@ class Preview extends React.Component {
             <button>Copy Description</button>
           </CopyToClipboard>
           <button onClick={() => carryInfo(this.props)} className="save-button">Save</button>
-          <button onClick={() => deleteButton()}>Delete</button>
         </div>
         <div className="count-container">
           <TitleCharCount />

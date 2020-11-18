@@ -457,6 +457,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _firebase__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../firebase */ "./client/firebase.js");
 
 
 
@@ -468,6 +469,15 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 
+
+
+var deleteButton = function deleteButton() {
+  deleteUserData();
+};
+
+function deleteUserData() {
+  _firebase__WEBPACK_IMPORTED_MODULE_6__["default"].database().ref('metaData').set(null);
+}
 
 var LowerSect = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(LowerSect, _React$Component);
@@ -486,7 +496,10 @@ var LowerSect = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "lower-sect"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
-        className: "delete-button"
+        className: "delete-button",
+        onClick: function onClick() {
+          return deleteButton();
+        }
       }, "Clear data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
         className: "download-button"
       }, "Download data"));
@@ -626,7 +639,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-copy-to-clipboard */ "./node_modules/react-copy-to-clipboard/lib/index.js");
 /* harmony import */ var react_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_copy_to_clipboard__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.esm.js");
+/* harmony import */ var _firebase__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../firebase */ "./client/firebase.js");
 /* harmony import */ var _TitleCharCount__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./TitleCharCount */ "./client/components/TitleCharCount.jsx");
 /* harmony import */ var _DescriptionCharCount__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./DescriptionCharCount */ "./client/components/DescriptionCharCount.jsx");
 
@@ -650,32 +663,12 @@ var carryInfo = function carryInfo(data) {
   writeUserData(data.url, data.title, data.description);
 };
 
-var deleteButton = function deleteButton() {
-  deleteUserData();
-};
-
-var firebaseConfig = {
-  apiKey: 'AIzaSyDlvYyJk13Oa2dIb5TlmuFRvTyfTZ6b-44',
-  authDomain: 'meta-data-checker.firebaseapp.com',
-  databaseURL: 'https://meta-data-checker.firebaseio.com',
-  projectId: 'meta-data-checker',
-  storageBucket: 'meta-data-checker.appspot.com',
-  messagingSenderId: '275652737293',
-  appId: '1:275652737293:web:e32267586219ff64bb1844',
-  measurementId: 'G-BP0VV7EMG4'
-};
-firebase__WEBPACK_IMPORTED_MODULE_8__["default"].initializeApp(firebaseConfig);
-
 function writeUserData(url, title, description) {
-  firebase__WEBPACK_IMPORTED_MODULE_8__["default"].database().ref('metaData/' + url).set({
+  _firebase__WEBPACK_IMPORTED_MODULE_8__["default"].database().ref('metaData/' + url).set({
     title: title,
     description: description,
     url: url
   });
-}
-
-function deleteUserData() {
-  firebase__WEBPACK_IMPORTED_MODULE_8__["default"].database().ref('metaData').set(null);
 }
 
 var Preview = /*#__PURE__*/function (_React$Component) {
@@ -717,11 +710,7 @@ var Preview = /*#__PURE__*/function (_React$Component) {
           return carryInfo(_this.props);
         },
         className: "save-button"
-      }, "Save"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
-        onClick: function onClick() {
-          return deleteButton();
-        }
-      }, "Delete")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, "Save")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "count-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_TitleCharCount__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_DescriptionCharCount__WEBPACK_IMPORTED_MODULE_10__["default"], null)));
     }
@@ -1000,6 +989,32 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["connect"])(mapStateToProps)(Url));
+
+/***/ }),
+
+/***/ "./client/firebase.js":
+/*!****************************!*\
+  !*** ./client/firebase.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.esm.js");
+
+var firebaseConfig = {
+  apiKey: 'AIzaSyDlvYyJk13Oa2dIb5TlmuFRvTyfTZ6b-44',
+  authDomain: 'meta-data-checker.firebaseapp.com',
+  databaseURL: 'https://meta-data-checker.firebaseio.com',
+  projectId: 'meta-data-checker',
+  storageBucket: 'meta-data-checker.appspot.com',
+  messagingSenderId: '275652737293',
+  appId: '1:275652737293:web:e32267586219ff64bb1844',
+  measurementId: 'G-BP0VV7EMG4'
+};
+var db = firebase__WEBPACK_IMPORTED_MODULE_0__["default"].initializeApp(firebaseConfig);
+/* harmony default export */ __webpack_exports__["default"] = (db);
 
 /***/ }),
 
