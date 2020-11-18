@@ -41,6 +41,7 @@
     ]
   },
   "dependencies": {
+    "download-csv": "^1.1.1",
     "express": "^4.17.1",
     "firebase": "^8.0.0",
     "heroku": "^7.42.13",

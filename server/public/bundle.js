@@ -458,8 +458,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _firebase__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../firebase */ "./client/firebase.js");
-/* harmony import */ var jsonexport__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! jsonexport */ "./node_modules/jsonexport/lib/index.js");
-/* harmony import */ var jsonexport__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(jsonexport__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var download_csv__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! download-csv */ "./node_modules/download-csv/index.js");
+/* harmony import */ var download_csv__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(download_csv__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var jsonexport__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jsonexport */ "./node_modules/jsonexport/lib/index.js");
+/* harmony import */ var jsonexport__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(jsonexport__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -469,6 +471,7 @@ __webpack_require__.r(__webpack_exports__);
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 
 
 
@@ -485,12 +488,11 @@ function deleteUserData() {
 function downloadData() {
   var leadsRef = _firebase__WEBPACK_IMPORTED_MODULE_6__["default"].database().ref('metaData');
   leadsRef.on('value', function (snapshot) {
-    snapshot.forEach(function (childSnapshot) {
-      var childData = childSnapshot.val();
-      jsonexport__WEBPACK_IMPORTED_MODULE_7___default()(childData, function (err, csv) {
-        if (err) return console.error(err);
-        console.log(csv);
-      });
+    var childData = snapshot.val();
+    jsonexport__WEBPACK_IMPORTED_MODULE_8___default()(childData, function (err, csv) {
+      if (err) return console.error(err);
+      console.log(csv);
+      Object(download_csv__WEBPACK_IMPORTED_MODULE_7__["downloadFile"])(csv, 'meta-data');
     });
   });
 }
@@ -51024,6 +51026,66 @@ function toComment(sourceMap) {
   var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
   return "/*# ".concat(data, " */");
 }
+
+/***/ }),
+
+/***/ "./node_modules/download-csv/dist/creatCSVFile.js":
+/*!********************************************************!*\
+  !*** ./node_modules/download-csv/dist/creatCSVFile.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(n){return typeof n}:function(n){return n&&"function"==typeof Symbol&&n.constructor===Symbol&&n!==Symbol.prototype?"symbol":typeof n};module.exports=function(n,e){var t=arguments.length>2&&void 0!==arguments[2]?arguments[2]:",";if(!n||Array.isArray(n)&&!n.length||!Object.keys(n).length)return"传入数据为空(the download datas is null)";var r=[];if("object"===("undefined"==typeof n?"undefined":_typeof(n))&&Array.isArray(n)){var o=function(){var o=Array.isArray(n[0]);return n.some(function(n){return Array.isArray(n)!==o})?{v:"传入数据格式不一致(the array element data format is inconsistent)"}:void(o?r=r.concat(n.map(function(n){return n.join(t)})):!function(){var o=[];if(n.forEach(function(n){return o=o.concat(Object.keys(n))}),o=o.filter(function(n,e,t){return t.indexOf(n)===e}),o.length>0)if(e&&"object"===("undefined"==typeof e?"undefined":_typeof(e))){var f=o.map(function(n){return e.hasOwnProperty(n)?e[n]:n});r.push(f.join(t))}else r.push(o.join(t));n.map(function(n){return o.map(function(e){return"undefined"!=typeof n[e]?n[e]:""})}).forEach(function(n){r.push(n.join(t))})}())}();if("object"===("undefined"==typeof o?"undefined":_typeof(o)))return o.v}else{if("object"!==("undefined"==typeof n?"undefined":_typeof(n)))return n;for(var f in n)e&&e.hasOwnProperty(f)?r.push(e[f]+","+n[f]):r.push(f+","+n[f])}return r.join("\r\n")};
+
+/***/ }),
+
+/***/ "./node_modules/download-csv/dist/detectionClientType.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/download-csv/dist/detectionClientType.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+module.exports=function(){var e={},r=navigator.userAgent.toLowerCase(),a=void 0;return(a=r.match(/msie ([\d.]+)/))?e.ie=a[1]:(a=r.match(/firefox\/([\d.]+)/))?e.firefox=a[1]:(a=r.match(/chrome\/([\d.]+)/))?e.chrome=a[1]:(a=r.match(/opera.([\d.]+)/))?e.opera=a[1]:(a=r.match(/version\/([\d.]+).*safari/))?e.safari=a[1]:0,e.ie?{name:"IE",version:e.ie}:e.firefox?{name:"Firefox",version:e.firefox}:e.chrome?{name:"Chrome",version:e.chrome}:e.opera?{name:"Opera",version:e.opera}:e.safari?{name:"Safari",version:e.safari}:{name:""}};
+
+/***/ }),
+
+/***/ "./node_modules/download-csv/dist/downloadFile.js":
+/*!********************************************************!*\
+  !*** ./node_modules/download-csv/dist/downloadFile.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var detectionClientType=__webpack_require__(/*! ./detectionClientType */ "./node_modules/download-csv/dist/detectionClientType.js");module.exports=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"export.csv";if(!e)return void console.log("the file is null");var n=detectionClientType(),o="\ufeff",c="data:attachment/csv;charset=utf-8,"+o+encodeURIComponent(e);if(window.Blob&&window.URL&&window.URL.createObjectURL){var a=new Blob([o+e],{type:"text/csv"});c=URL.createObjectURL(a)}if("IE"===n.name){var d=window.top.open("about:blank","_blank");return d.document.write("sep=,\r\n"+e),d.document.close(),d.document.execCommand("SaveAs",!0,t),void d.close()}if("Safari"===n.name){var i=document.createElement("a");i.id="csvDwnLink",document.body.appendChild(i);var r=o+e,l="data:attachment/csv;charset=utf-8,"+encodeURIComponent(r);return document.getElementById("csvDwnLink").setAttribute("href",l),document.getElementById("csvDwnLink").click(),void document.body.removeChild(i)}if("Firefox"===n.name){var v=document.createElement("a");v.download=t,v.target="_blank",v.href=c;var m=document.createEvent("MouseEvents");return m.initEvent("click",!0,!0),void v.dispatchEvent(m)}var u=document.createElement("a");u.download=t,u.href=c,u.click()};
+
+/***/ }),
+
+/***/ "./node_modules/download-csv/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/download-csv/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var creatCSVFile = __webpack_require__(/*! ./dist/creatCSVFile */ "./node_modules/download-csv/dist/creatCSVFile.js");
+var downloadFile = __webpack_require__(/*! ./dist/downloadFile */ "./node_modules/download-csv/dist/downloadFile.js");
+var detectionClientType = __webpack_require__(/*! ./dist/detectionClientType */ "./node_modules/download-csv/dist/detectionClientType.js");
+
+function downloadCsv(datas, columns, filename) {
+  downloadFile(creatCSVFile(datas, columns), filename);
+};
+
+downloadCsv.creatCsvFile = creatCSVFile;
+downloadCsv.downloadFile = downloadFile;
+downloadCsv.detectionClientType = detectionClientType;
+
+module.exports = downloadCsv;
+
 
 /***/ }),
 

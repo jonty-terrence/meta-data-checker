@@ -1,6 +1,7 @@
 import React from 'react'
 
 import db from '../firebase'
+import { downloadFile } from 'download-csv'
 
 import jsonexport from 'jsonexport'
 
@@ -16,12 +17,12 @@ function downloadData () {
   const leadsRef = db.database().ref('metaData')
 
   leadsRef.on('value', function (snapshot) {
-    snapshot.forEach(function (childSnapshot) {
-      const childData = childSnapshot.val()
-      jsonexport(childData, function (err, csv) {
-        if (err) return console.error(err)
-        console.log(csv)
-      })
+    let childData = snapshot.val()
+
+    jsonexport(childData, function (err, csv) {
+      if (err) return console.error(err)
+      console.log(csv)
+      downloadFile(csv, 'meta-data')
     })
   })
 }
