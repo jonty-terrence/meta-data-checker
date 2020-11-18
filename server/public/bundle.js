@@ -663,8 +663,16 @@ var carryInfo = function carryInfo(data) {
   writeUserData(data.url, data.title, data.description);
 };
 
+function urlDomain(data) {
+  var a = document.createElement('a');
+  a.href = data;
+  return a.hostname;
+}
+
 function writeUserData(url, title, description) {
-  _firebase__WEBPACK_IMPORTED_MODULE_8__["default"].database().ref('metaData/' + url).set({
+  var domain = urlDomain(url);
+  var name = domain.split('.').join('');
+  _firebase__WEBPACK_IMPORTED_MODULE_8__["default"].database().ref('metaData/' + name).set({
     title: title,
     description: description,
     url: url

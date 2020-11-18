@@ -10,8 +10,16 @@ const carryInfo = (data) => {
   writeUserData(data.url, data.title, data.description)
 }
 
+function urlDomain (data) {
+  var a = document.createElement('a')
+  a.href = data
+  return a.hostname
+}
+
 function writeUserData (url, title, description) {
-  db.database().ref('metaData/' + url).set({
+  const domain = urlDomain(url)
+  const name = domain.split('.').join('')
+  db.database().ref('metaData/' + name).set({
     title: title,
     description: description,
     url: url
