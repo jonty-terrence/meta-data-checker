@@ -6,6 +6,7 @@ import Title from './Title'
 import Description from './Description'
 import Preview from './Preview'
 import PopUp from './PopUp'
+import LowerSect from './LowerSect'
 
 class App extends React.Component {
   render () {
@@ -20,6 +21,7 @@ class App extends React.Component {
           <Description />
         </div>
         <Preview />
+        <LowerSect />
       </div>
     )
   }
