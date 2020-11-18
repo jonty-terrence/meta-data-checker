@@ -15,13 +15,10 @@ function deleteUserData () {
 
 function downloadData () {
   const leadsRef = db.database().ref('metaData')
-
   leadsRef.on('value', function (snapshot) {
     let childData = snapshot.val()
-
     jsonexport(childData, function (err, csv) {
       if (err) return console.error(err)
-      console.log(csv)
       downloadFile(csv, 'meta-data')
     })
   })
