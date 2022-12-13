@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "download-csv": "^1.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase": "^8.0.0",
     "heroku": "^7.42.13",
     "json-2-csv": "^3.7.8",
