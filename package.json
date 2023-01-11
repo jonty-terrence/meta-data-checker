@@ -48,7 +48,7 @@
     "json-2-csv": "^3.7.8",
     "json2csv": "^5.0.5",
     "jsonexport": "^3.0.1",
-    "knex": "^0.21.5",
+    "knex": "^2.4.0",
     "react-copy-to-clipboard": "^5.0.2",
     "reactjs-popup": "^2.0.4",
     "superagent": "^6.1.0"
